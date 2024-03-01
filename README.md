@@ -6,16 +6,25 @@ The script reads IP addresses from a file, displays detailed information about e
 ## Usage:
 
 1. Depending on what shell you are using, set your Shodan API key as an environment variable in the `~/.zshrc` or `~/.bashrc` file:
-   
     ```bash
-   export SHODAN_API_KEY="your_api_key_here"
+    export SHODAN_API_KEY="your_api_key_here"
+    ```
    
-3. Run the following command to apply the changes:
-For Zsh:
-```source ~/.zshrc # for Zsh```
-OR for Bash: 
-```source ~/.bashrc # for Bash```
+2. Run the following command to apply the changes:
 
-5. Create a file of IP addresses named ```ips.txt```
-6. Run the script:
-```python3 shodan_search.py```
+   For Zsh:
+    ```bash
+    source ~/.zshrc
+    ```
+   
+   For Bash:
+    ```bash
+    source ~/.bashrc
+    ```
+
+3. Create a file of IP addresses named `ips.txt`.
+
+4. Run the script:
+    ```bash
+    python3 shodan_search.py
+    ```
