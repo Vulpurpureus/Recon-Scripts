@@ -1,12 +1,16 @@
 import shodan
 import csv
+import os
 
 # ANSI escape code for red text
 RED = "\033[1m\033[91m"  # Bold + Red
 ENDC = "\033[0m"  # Reset to default color
 
 # Initialize the Shodan API with your provided API key
-api_key = '7sWgbmiNIc3UkznveHwqTHdSC8EJ7H90'
+api_key = os.getenv('SHODAN_API_KEY')
+if not api_key:
+    raise EnvironmentError("SHODAN_API_KEY environment variable not set.")
+
 api = shodan.Shodan(api_key)
 
 # Path to the file containing IP addresses
