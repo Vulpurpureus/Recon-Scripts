@@ -31,3 +31,19 @@ The script reads IP addresses from a file, displays detailed information about e
     ```bash
     python3 shodan_search.py -l [ips_file.txt] -o [results_file.csv]
     ```
+
+
+## Help
+
+To display the help menu:
+```bash
+python3 shodan_search.py -h
+```
+
+Here are all the switches it supports:
+```bash
+optional arguments:
+  -h, --help            show this help message and exit
+  -l LIST, --list LIST  File containing list of IP addresses
+  -o OUTPUT, --output OUTPUT Output CSV file name
+```
