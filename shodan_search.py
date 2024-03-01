@@ -13,10 +13,18 @@ if not api_key:
 
 api = shodan.Shodan(api_key)
 
+# Parse command-line arguments
+parser = argparse.ArgumentParser(description='Shodan Search Script')
+parser.add_argument('-l', '--list', required=True, help='File containing list of IP addresses')
+parser.add_argument('-o', '--output', required=True, help='Output CSV file name')
+args = parser.parse_args()
+
+
 # Path to the file containing IP addresses
-file_path = 'ips.txt'
+file_path = args.list
+
 # Path to the output CSV file
-output_csv_path = 'shodan_results.csv'
+output_csv_path = args.output
 
 # Function to write data to CSV
 def write_to_csv(ip, info, csvwriter):
