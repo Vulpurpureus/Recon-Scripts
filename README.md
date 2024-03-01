@@ -9,6 +9,11 @@ The script reads IP addresses from a file, displays detailed information about e
     ```bash
     export SHODAN_API_KEY="your_api_key_here"
     ```
+
+    If you're uncertain about which shell you're currently using, you can easily find out by executing the following command:
+    ```bash
+    echo $SHELL
+    ```
    
 2. Run the following command to apply the changes:
 
@@ -22,9 +27,7 @@ The script reads IP addresses from a file, displays detailed information about e
     source ~/.bashrc
     ```
 
-3. Create a file of IP addresses named `ips.txt`.
-
 4. Run the script:
     ```bash
-    python3 shodan_search.py
+    python3 shodan_search.py -l [ips_file.txt] -o [results_file.csv]
     ```
