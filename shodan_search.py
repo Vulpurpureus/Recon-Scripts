@@ -1,6 +1,7 @@
 import shodan
 import csv
 import os
+import argparse
 
 # ANSI escape code for red text
 RED = "\033[1m\033[91m"  # Bold + Red
@@ -18,7 +19,6 @@ parser = argparse.ArgumentParser(description='Shodan Search Script')
 parser.add_argument('-l', '--list', required=True, help='File containing list of IP addresses')
 parser.add_argument('-o', '--output', required=True, help='Output CSV file name')
 args = parser.parse_args()
-
 
 # Path to the file containing IP addresses
 file_path = args.list
@@ -75,6 +75,3 @@ with open(output_csv_path, 'w', newline='', encoding='utf-8') as csvfile:
 
         except shodan.APIError as e:
             print(f"Error for IP {ip}: {e}")
-
-# This script reads IP addresses from a file, displays detailed information about each one,
-# separates the results for each IP address with an empty line, and writes the results to a CSV file.
